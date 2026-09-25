@@ -39,6 +39,8 @@ def identify_most_common_word(str):
         if str.count(word) > most_common_word["count"]:
             most_common_word["word"] = word
             most_common_word["count"] = str.count(word)
+    
+    return most_common_word["word"]
 
 
 # calculate average length of word in str
@@ -58,3 +60,9 @@ def count_paragraphs(str):
 # empty str should return 1
 def count_sentences(str):
     pass
+
+# def main():
+#     print(identify_most_common_word("cat cat cat cat"))
+    
+if __name__ == "__main__":
+    main()
