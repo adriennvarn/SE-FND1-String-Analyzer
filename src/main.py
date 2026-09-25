@@ -17,7 +17,6 @@ def count_specific_word(str, search):
 
 
 # identify most common word in str
-# empty str should return None
 def identify_most_common_word(str):
     # if empty string, return None
     if not str:
@@ -45,9 +44,20 @@ def identify_most_common_word(str):
 
 # calculate average length of word in str
 # exclude punctuation and special characters
-# empty str should return 0
 def calculate_average_word_length(str):
-    pass
+    # if str empty, return 0
+    if not str:
+        return 0
+    # init sum 
+    sum = 0
+    # clean string of punctuation, convert to array
+    words = re.sub(r"[^\w\s]", "", str).split()
+    
+    # loop through words, adding length to sum
+    for word in words:
+        sum += len(word)
+    
+    return sum / len(words)
 
 
 # calculate number of paragraphs in str based on empty lines between paragraphs
