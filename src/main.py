@@ -61,9 +61,14 @@ def calculate_average_word_length(str):
 
 
 # calculate number of paragraphs in str based on empty lines between paragraphs
-# empty str should return 1
 def count_paragraphs(str):
-    pass
+    # if str empty, return 1
+    if not str:
+        return 1
+    # split words into array based on pairs of newlines
+    words = str.split("\n\n")
+    return len(words)
+    
 
 
 # return number of sentences based on periods, question marks, exclamation points
@@ -71,8 +76,8 @@ def count_paragraphs(str):
 def count_sentences(str):
     pass
 
-# def main():
-#     print(identify_most_common_word("cat cat cat cat"))
+def main():
+    print(count_paragraphs("this is\n\ntwo paragraphs"))
     
 if __name__ == "__main__":
     main()
