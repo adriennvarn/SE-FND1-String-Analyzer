@@ -1,5 +1,5 @@
 import pytest
-from src.main import *
+from src.pythonAssessment import *
 
 
 # count number of "search" in "str"
