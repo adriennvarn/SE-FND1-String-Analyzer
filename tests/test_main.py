@@ -36,5 +36,5 @@ def test_count_paragraphs():
 # return number of sentences based on periods, question marks, exclamation points
 # empty str should return 1
 def test_count_sentences():
-    assert test_count_sentences("") == 1
-    assert test_count_sentences("There are technically. Three sentences? In this string!") == 3
+    assert count_sentences("") == 1
+    assert count_sentences("There are technically. Three sentences? In this string!") == 3

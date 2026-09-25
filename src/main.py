@@ -28,7 +28,7 @@ def identify_most_common_word(str):
     most_common_word = {"word": None, "count": 0}
     # clean out punctuation before splitting words into array
     words = re.sub(r"[^\w\s]", "", str).split()
-    
+
     # loop through words
     for word in words:
         # if word already checked for, skip
@@ -38,7 +38,7 @@ def identify_most_common_word(str):
         if str.count(word) > most_common_word["count"]:
             most_common_word["word"] = word
             most_common_word["count"] = str.count(word)
-    
+
     return most_common_word["word"]
 
 
@@ -48,15 +48,15 @@ def calculate_average_word_length(str):
     # if str empty, return 0
     if not str:
         return 0
-    # init sum 
+    # init sum
     sum = 0
     # clean string of punctuation, convert to array
     words = re.sub(r"[^\w\s]", "", str).split()
-    
+
     # loop through words, adding length to sum
     for word in words:
         sum += len(word)
-    
+
     return sum / len(words)
 
 
@@ -68,16 +68,26 @@ def count_paragraphs(str):
     # split words into array based on pairs of newlines
     words = str.split("\n\n")
     return len(words)
-    
 
 
 # return number of sentences based on periods, question marks, exclamation points
-# empty str should return 1
 def count_sentences(str):
-    pass
+    # if str empty, return 1
+    if not str:
+        return 1
+    # split string into array from specified punctuation marks
+    sentences = re.split(r"[\.\!\?]", str)
+    # if str ends on a delimiter, a blank string is added to the end of the array.
+    # this just removes it if it exists.
+    if not sentences[-1]:
+        sentences.pop()
+    print(sentences)
+    return len(sentences)
+
 
 def main():
-    print(count_paragraphs("this is\n\ntwo paragraphs"))
-    
+    print(count_sentences("There are. Several sentences? In this. String!"))
+
+
 if __name__ == "__main__":
     main()
