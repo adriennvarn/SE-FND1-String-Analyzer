@@ -81,13 +81,5 @@ def count_sentences(str):
     # this just removes it if it exists.
     if not sentences[-1]:
         sentences.pop()
-    print(sentences)
+
     return len(sentences)
-
-
-def main():
-    print(count_sentences("There are. Several sentences? In this. String!"))
-
-
-if __name__ == "__main__":
-    main()
